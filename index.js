@@ -22,8 +22,11 @@ app.post("/api/add_todo", function(req,res,next){
     if(status) res.json({res: "recieved", data: status})
 })
 
+let port;
+if(process.env.NODE_ENV === "production"){port = process.env.PORT}
+else port = 5000
 
-let port = process.env.PORT
+
 app.listen(port, () => {
     console.log(`listening to port ${port}`)
 })
