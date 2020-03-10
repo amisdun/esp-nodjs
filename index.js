@@ -23,7 +23,7 @@ app.post("/api/add_todo", function(req,res,next){
 })
 
 
-let port = 8000 || process.env.PORT
+let port = process.env.PORT
 app.listen(port, () => {
     console.log(`listening to port ${port}`)
 })
