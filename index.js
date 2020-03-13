@@ -20,9 +20,7 @@ app.use(body_parser.urlencoded({extended: false}))
 app.get('/', function(req,res,next){
     // res.sendFile(path.join(__dirname + "/index.html"))
     io.on("connection", (socket) => {
-        socket.emit("data", (status) => {
-            return res.json({res: "recieved", data: "this is a response"})
-        })
+        socket.emit("data", "hello this is my data")
     })
 })
 
