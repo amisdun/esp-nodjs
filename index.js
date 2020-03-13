@@ -1,8 +1,10 @@
 const express = require("express")
 const body_parser = require("body-parser")
 const path = require("path")
+const cors = require("cors")
 
 let app = express()
+app.use(cors())
 const socket_server = require("http").createServer(app)
 
 const io = require("socket.io")(socket_server);
@@ -28,7 +30,7 @@ app.get('/', function(req,res,next){
 
 app.post("/api/add_todo", function(req,res,next){
     // let status = req.body.status
-    
+
     return res.json(res: "recieved")
 })
 
