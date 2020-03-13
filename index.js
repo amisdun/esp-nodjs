@@ -21,11 +21,11 @@ app.get('/', function(req,res,next){
 })
 
 app.post("/api/add_todo", function(req,res,next){
-    let status = req.body.status
+    // let status = req.body.status
 
     io.on("connection", (socket) => {
         socket.emit("data", (status) => {
-            return res.json({res: "recieved", data: status})
+            return res.json({res: "recieved", data: "this is a response"})
         })
     })
 })
