@@ -31,7 +31,7 @@ app.get('/', function(req,res,next){
 app.post("/api/add_todo", function(req,res,next){
     // let status = req.body.status
 
-    return res.json(res: "recieved")
+    return res.json({res: "recieved"})
 })
 
 let port;
