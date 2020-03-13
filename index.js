@@ -1,6 +1,7 @@
 const express = require("express")
 const body_parser = require("body-parser")
 const path = require("path")
+
 const cors = require("cors")
 
 let app = express()
@@ -18,7 +19,7 @@ app.use(body_parser.urlencoded({extended: false}))
 // creating routers
 
 io.on("connection", (socket) => {
-        socket.emit("data", "get this data")
+        socket.emit("data", "a function")
     })
 
 app.get('/', function(req,res,next){
