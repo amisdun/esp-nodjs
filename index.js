@@ -17,11 +17,13 @@ app.use(body_parser.urlencoded({extended: false}))
 
 // creating routers
 
+io.on("connection", (socket) => {
+        socket.emit("data", "get this data")
+    })
+
 app.get('/', function(req,res,next){
     // res.sendFile(path.join(__dirname + "/index.html"))
-    io.on("connection", (socket) => {
-        socket.emit("data", "hello this is my data")
-    })
+    return res.json({res: "welcome"})
 })
 
 app.post("/api/add_todo", function(req,res,next){
