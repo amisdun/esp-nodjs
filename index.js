@@ -15,6 +15,12 @@ app.use(body_parser.urlencoded({extended: false}))
 
 // creating routers
 
+io.on("connection", (socket) => {
+        socket.emit("data", (status) => {
+            return res.json({res: "recieved", data: "this is a response"})
+        })
+    })
+
 app.get('/', function(req,res,next){
     // res.sendFile(path.join(__dirname + "/index.html"))
     return res.json({res: "welcome"})
@@ -22,12 +28,8 @@ app.get('/', function(req,res,next){
 
 app.post("/api/add_todo", function(req,res,next){
     // let status = req.body.status
-
-    io.on("connection", (socket) => {
-        socket.emit("data", (status) => {
-            return res.json({res: "recieved", data: "this is a response"})
-        })
-    })
+    
+    return res.json(res: "recieved")
 })
 
 let port;
