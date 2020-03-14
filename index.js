@@ -67,6 +67,7 @@ let admin_auth = async (req,res,next) => {
         }
     })
 }
+// this is the admin signup controller
 
 let admin_signup = async (req,res,next) =>{ 
     try {
